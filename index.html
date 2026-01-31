@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENECA | Hospitality & Real Estate Investment | Uzbekistan</title>
+    <meta name="description" content="SENECA is a private investment platform focused on hospitality and real estate assets in Uzbekistan for institutional and private capital partners.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           SENECA Design System - CSS Variables
+           ======================================== */
+        :root {
+            /* Colors */
+            --seneca-black: #1A1A1A;
+            --seneca-graphite: #2D2D2D;
+            --seneca-body: #4A4A4A;
+            --seneca-soft: #6B6B6B;
+            --seneca-white: #FFFFFF;
+            --seneca-off-white: #FAFAFA;
+            --seneca-light: #F5F5F5;
+            --seneca-warm: #F8F7F5;
+            --seneca-green: #2E7D5A;
+            --seneca-steel: #5A6C7D;
+            --seneca-border: #E5E5E5;
+            --seneca-border-medium: #D0D0D0;
+
+            /* Spacing */
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 16px;
+            --space-4: 24px;
+            --space-5: 32px;
+            --space-6: 48px;
+            --space-7: 64px;
+            --space-8: 96px;
+            --space-9: 128px;
+            --space-10: 160px;
+
+            /* Typography */
+            --font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+            /* Misc */
+            --radius: 4px;
+            --radius-lg: 8px;
+            --transition: 200ms ease;
+            --max-width: 1200px;
+            --max-width-text: 680px;
+        }
+
+        /* ========================================
+           Reset & Base
+           ======================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--seneca-body);
+            background-color: var(--seneca-white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ========================================
+           Typography
+           ======================================== */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--seneca-black);
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        h1 {
+            font-size: 48px;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 36px;
+            letter-spacing: -0.01em;
+            margin-bottom: var(--space-4);
+        }
+
+        h3 {
+            font-size: 28px;
+            margin-bottom: var(--space-3);
+        }
+
+        h4 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: var(--space-3);
+        }
+
+        h5 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: var(--space-2);
+        }
+
+        p {
+            margin-bottom: var(--space-3);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: var(--seneca-steel);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--seneca-black);
+        }
+
+        .overline {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--seneca-soft);
+            margin-bottom: var(--space-3);
+        }
+
+        /* ========================================
+           Layout
+           ======================================== */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 80px;
+        }
+
+        .container--narrow {
+            max-width: 800px;
+        }
+
+        .container--text {
+            max-width: var(--max-width-text);
+        }
+
+        section {
+            padding: var(--space-8) 0;
+        }
+
+        .section--alt {
+            background-color: var(--seneca-light);
+        }
+
+        .section--warm {
+            background-color: var(--seneca-warm);
+        }
+
+        /* ========================================
+           Navigation
+           ======================================== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--seneca-border);
+        }
+
+        .nav__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .nav__logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--seneca-black);
+            letter-spacing: 0.05em;
+        }
+
+        .nav__links {
+            display: flex;
+            gap: var(--space-5);
+            list-style: none;
+        }
+
+        .nav__link {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--seneca-body);
+        }
+
+        .nav__link:hover {
+            color: var(--seneca-black);
+        }
+
+        /* ========================================
+           Hero Section
+           ======================================== */
+        .hero {
+            padding: var(--space-10) 0 var(--space-9);
+            margin-top: 72px;
+            background-color: var(--seneca-white);
+        }
+
+        .hero__content {
+            max-width: 800px;
+        }
+
+        .hero__headline {
+            font-size: 52px;
+            line-height: 1.15;
+            margin-bottom: var(--space-4);
+        }
+
+        .hero__subheadline {
+            font-size: 20px;
+            line-height: 1.6;
+            color: var(--seneca-body);
+            margin-bottom: var(--space-5);
+        }
+
+        .hero__position {
+            font-size: 16px;
+            color: var(--seneca-soft);
+            border-left: 2px solid var(--seneca-green);
+            padding-left: var(--space-4);
+        }
+
+        /* ========================================
+           Buttons
+           ======================================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            font-family: var(--font-family);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border-radius: var(--radius);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn--primary {
+            background-color: var(--seneca-black);
+            color: var(--seneca-white);
+        }
+
+        .btn--primary:hover {
+            background-color: var(--seneca-graphite);
+            color: var(--seneca-white);
+        }
+
+        .btn--secondary {
+            background-color: transparent;
+            color: var(--seneca-black);
+            border: 1px solid var(--seneca-black);
+        }
+
+        .btn--secondary:hover {
+            background-color: var(--seneca-light);
+        }
+
+        /* ========================================
+           Cards
+           ======================================== */
+        .card {
+            background: var(--seneca-white);
+            border: 1px solid var(--seneca-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-5);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--seneca-border-medium);
+        }
+
+        .card__label {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--seneca-green);
+            background: rgba(46, 125, 90, 0.1);
+            padding: 6px 12px;
+            border-radius: var(--radius);
+            margin-bottom: var(--space-3);
+        }
+
+        .card__title {
+            font-size: 22px;
+            margin-bottom: var(--space-3);
+        }
+
+        .card__text {
+            color: var(--seneca-body);
+            margin-bottom: var(--space-4);
+        }
+
+        .card__list {
+            list-style: none;
+            margin-bottom: var(--space-4);
+        }
+
+        .card__list li {
+            position: relative;
+            padding-left: var(--space-4);
+            margin-bottom: var(--space-2);
+            font-size: 15px;
+            color: var(--seneca-body);
+        }
+
+        .card__list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 1px;
+            background: var(--seneca-soft);
+        }
+
+        /* ========================================
+           Grid
+           ======================================== */
+        .grid {
+            display: grid;
+            gap: var(--space-4);
+        }
+
+        .grid--2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid--3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid--4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* ========================================
+           Divider
+           ======================================== */
+        .divider {
+            width: 120px;
+            height: 1px;
+            background: var(--seneca-border);
+            margin: var(--space-6) auto;
+        }
+
+        .divider--left {
+            margin-left: 0;
+        }
+
+        /* ========================================
+           Principles Section
+           ======================================== */
+        .principles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-6);
+            margin-top: var(--space-6);
+        }
+
+        .principle {
+            padding: var(--space-4) 0;
+            border-top: 1px solid var(--seneca-border);
+        }
+
+        .principle__title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: var(--space-2);
+        }
+
+        .principle__text {
+            font-size: 15px;
+            color: var(--seneca-body);
+        }
+
+        /* ========================================
+           Thesis Points
+           ======================================== */
+        .thesis-points {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-5);
+            margin-top: var(--space-6);
+        }
+
+        .thesis-point {
+            padding: var(--space-4);
+            background: var(--seneca-white);
+            border-radius: var(--radius-lg);
+        }
+
+        .thesis-point__title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: var(--space-2);
+        }
+
+        .thesis-point__text {
+            font-size: 15px;
+            color: var(--seneca-body);
+            margin-bottom: 0;
+        }
+
+        /* ========================================
+           Metrics Grid
+           ======================================== */
+        .metrics {
+            display: flex;
+            gap: var(--space-6);
+            flex-wrap: wrap;
+            margin-top: var(--space-5);
+        }
+
+        .metric {
+            text-align: center;
+            padding: var(--space-4);
+            background: var(--seneca-white);
+            border-radius: var(--radius-lg);
+            min-width: 140px;
+        }
+
+        .metric__label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--seneca-soft);
+            margin-bottom: var(--space-1);
+        }
+
+        .metric__value {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--seneca-black);
+        }
+
+        /* ========================================
+           CTA Section
+           ======================================== */
+        .cta {
+            text-align: center;
+            padding: var(--space-9) 0;
+        }
+
+        .cta__title {
+            margin-bottom: var(--space-4);
+        }
+
+        .cta__text {
+            max-width: 600px;
+            margin: 0 auto var(--space-5);
+            color: var(--seneca-body);
+        }
+
+        /* ========================================
+           Footer
+           ======================================== */
+        .footer {
+            background: var(--seneca-black);
+            color: var(--seneca-white);
+            padding: var(--space-7) 0 var(--space-6);
+        }
+
+        .footer__top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--space-6);
+        }
+
+        .footer__logo {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .footer__tagline {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: var(--space-2);
+        }
+
+        .footer__links {
+            display: flex;
+            gap: var(--space-6);
+        }
+
+        .footer__link {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer__link:hover {
+            color: var(--seneca-white);
+        }
+
+        .footer__bottom {
+            padding-top: var(--space-5);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer__disclaimer {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.6;
+            max-width: 800px;
+        }
+
+        /* ========================================
+           Responsive
+           ======================================== */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 40px;
+            }
+
+            h1, .hero__headline {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            .grid--3 {
+                grid-template-columns: 1fr;
+            }
+
+            .principles {
+                grid-template-columns: 1fr;
+            }
+
+            .thesis-points {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            section {
+                padding: var(--space-7) 0;
+            }
+
+            .hero {
+                padding: var(--space-8) 0 var(--space-7);
+            }
+
+            h1, .hero__headline {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            .hero__subheadline {
+                font-size: 17px;
+            }
+
+            .nav__links {
+                display: none;
+            }
+
+            .grid--2 {
+                grid-template-columns: 1fr;
+            }
+
+            .footer__top {
+                flex-direction: column;
+                gap: var(--space-5);
+            }
+
+            .footer__links {
+                flex-direction: column;
+                gap: var(--space-3);
+            }
+
+            .metrics {
+                justify-content: center;
+            }
+        }
+
+        /* ========================================
+           Animations
+           ======================================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .fade-in-delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .fade-in-delay-3 { animation-delay: 0.3s; opacity: 0; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav__inner">
+            <a href="#" class="nav__logo">SENECA</a>
+            <ul class="nav__links">
+                <li><a href="#thesis" class="nav__link">Market Thesis</a></li>
+                <li><a href="#standard" class="nav__link">Our Standard</a></li>
+                <li><a href="#portfolio" class="nav__link">Portfolio</a></li>
+                <li><a href="#reporting" class="nav__link">Reporting</a></li>
+                <li><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <p class="overline fade-in">Hospitality & Real Estate Investment</p>
+                <h1 class="hero__headline fade-in fade-in-delay-1">Hospitality Investment in Uzbekistan's Emerging Market</h1>
+                <p class="hero__subheadline fade-in fade-in-delay-2">SENECA is a private investment platform focused on hospitality and real estate assets in Uzbekistan. We identify, structure, and manage investments for institutional and private capital partners.</p>
+                <p class="hero__position fade-in fade-in-delay-3">We exist to provide disciplined access to an undersupplied hospitality market — with transparency, alignment, and long-term thinking at the center of every engagement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Thesis Section -->
+    <section id="thesis" class="section--alt">
+        <div class="container">
+            <p class="overline">Market Thesis</p>
+            <h2>Why Uzbekistan</h2>
+            <p class="container--text" style="padding: 0;">Uzbekistan represents one of Central Asia's most compelling early-stage hospitality markets. The country is experiencing a structural shift in tourism infrastructure, supported by regulatory reform and government-backed development incentives.</p>
+
+            <div class="thesis-points">
+                <div class="thesis-point">
+                    <h5 class="thesis-point__title">Tourism Growth</h5>
+                    <p class="thesis-point__text">International arrivals have shown consistent year-over-year growth, with the government targeting substantial increases in inbound tourism through 2030. Domestic travel demand continues to expand as regional connectivity improves.</p>
+                </div>
+                <div class="thesis-point">
+                    <h5 class="thesis-point__title">Undersupply of Branded Hotels</h5>
+                    <p class="thesis-point__text">The current hotel inventory remains significantly below projected demand — particularly in the internationally branded, upper-midscale, and lifestyle segments. This supply-demand imbalance creates a window for strategic entry.</p>
+                </div>
+                <div class="thesis-point">
+                    <h5 class="thesis-point__title">Government-Backed Incentives</h5>
+                    <p class="thesis-point__text">The Uzbek government has implemented investment incentives for hospitality development, including tax benefits, land allocation programs, and infrastructure support in designated tourism zones.</p>
+                </div>
+                <div class="thesis-point">
+                    <h5 class="thesis-point__title">Early-Stage Advantage</h5>
+                    <p class="thesis-point__text">Early entrants to this market benefit from favorable land acquisition terms, limited competition for quality sites, and the ability to establish partnerships with international operators before the market matures.</p>
+                </div>
+            </div>
+
+            <p style="font-size: 14px; color: var(--seneca-soft); margin-top: var(--space-5); font-style: italic;">Note: All projections are based on publicly available data and government-stated targets. Actual performance will depend on macroeconomic conditions, policy continuity, and execution.</p>
+        </div>
+    </section>
+
+    <!-- SENECA Standard Section -->
+    <section id="standard">
+        <div class="container">
+            <p class="overline">Investment Philosophy</p>
+            <h2>The SENECA Standard</h2>
+            <p class="container--text" style="padding: 0;">SENECA operates under a set of non-negotiable principles that govern how we source, structure, and manage investments. These are not marketing positions — they are operational commitments.</p>
+
+            <div class="principles">
+                <div class="principle">
+                    <h5 class="principle__title">Transparency</h5>
+                    <p class="principle__text">Investors receive complete visibility into deal structure, fee arrangements, and performance reporting. There are no hidden layers. All material terms are disclosed before capital commitment.</p>
+                </div>
+                <div class="principle">
+                    <h5 class="principle__title">Conflict-of-Interest Discipline</h5>
+                    <p class="principle__text">SENECA does not take positions that conflict with investor interests. We do not accept undisclosed referral fees, participate in competing transactions, or structure arrangements that misalign incentives.</p>
+                </div>
+                <div class="principle">
+                    <h5 class="principle__title">Institutional Reporting Standards</h5>
+                    <p class="principle__text">All investments are tracked using institutional-grade reporting frameworks. Investors receive regular updates on financial performance, operational metrics, and material developments.</p>
+                </div>
+                <div class="principle">
+                    <h5 class="principle__title">Long-Term Value Creation</h5>
+                    <p class="principle__text">We do not pursue short-term speculation or opportunistic exits that compromise asset quality. Our investment horizon is measured in years, not quarters. We build for durable value.</p>
+                </div>
+                <div class="principle">
+                    <h5 class="principle__title">Selective Engagement</h5>
+                    <p class="principle__text">We decline more opportunities than we accept. Our portfolio is intentionally concentrated in assets where we have conviction, operational insight, and clear value-creation pathways.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section--alt">
+        <div class="container">
+            <p class="overline">Portfolio Overview</p>
+            <h2>Investment Categories</h2>
+            <p class="container--text" style="padding: 0; margin-bottom: var(--space-6);">SENECA structures investments across three distinct categories, each with a defined risk-return profile and investment thesis.</p>
+
+            <div class="grid grid--3">
+                <!-- Hospitality & Tourism -->
+                <div class="card">
+                    <span class="card__label">Yield-Focused</span>
+                    <h4 class="card__title">Hospitality & Tourism</h4>
+                    <p class="card__text">Operational and near-operational hotel assets designed for consistent income generation.</p>
+                    <ul class="card__list">
+                        <li>Stabilized or stabilizing cash flows</li>
+                        <li>International brand affiliation</li>
+                        <li>Professional property management</li>
+                        <li>Target markets: Tashkent, Samarkand, Bukhara</li>
+                    </ul>
+                    <p style="font-size: 14px; color: var(--seneca-soft);">Suitable for investors seeking current income with moderate capital appreciation.</p>
+                </div>
+
+                <!-- Strategic Development -->
+                <div class="card">
+                    <span class="card__label">Growth-Focused</span>
+                    <h4 class="card__title">Strategic Development & Land</h4>
+                    <p class="card__text">Early-stage development opportunities and first-line land positions in designated tourism zones.</p>
+                    <ul class="card__list">
+                        <li>Pre-development or early construction</li>
+                        <li>Strategic site locations with scarcity value</li>
+                        <li>Brand pipeline in progress</li>
+                        <li>Government incentive eligibility</li>
+                    </ul>
+                    <p style="font-size: 14px; color: var(--seneca-soft);">Suitable for investors with longer time horizons and tolerance for development risk.</p>
+                </div>
+
+                <!-- Premium Residential -->
+                <div class="card">
+                    <span class="card__label">Capital Preservation</span>
+                    <h4 class="card__title">Premium Residential</h4>
+                    <p class="card__text">High-specification residential assets in urban centers, designed for rental yield and residency eligibility.</p>
+                    <ul class="card__list">
+                        <li>Completed or near-completion construction</li>
+                        <li>Prime urban locations (Tashkent)</li>
+                        <li>Rental market demand</li>
+                        <li>Residency investment thresholds</li>
+                    </ul>
+                    <p style="font-size: 14px; color: var(--seneca-soft);">Suitable for investors seeking capital preservation with modest yield.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reporting Section -->
+    <section id="reporting">
+        <div class="container">
+            <p class="overline">Investor Reporting</p>
+            <h2>Transparency & Reporting</h2>
+            <p class="container--text" style="padding: 0;">SENECA maintains reporting standards consistent with institutional investment practices. Our commitment to transparency extends beyond disclosure — it is embedded in how we operate.</p>
+
+            <div class="grid grid--2" style="margin-top: var(--space-6);">
+                <div>
+                    <h4>Reporting Cadence</h4>
+                    <ul class="card__list">
+                        <li>Quarterly performance reports</li>
+                        <li>Annual audited financial statements</li>
+                        <li>Material event notifications within defined timeframes</li>
+                        <li>Ad-hoc updates for significant developments</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Data Room Access</h4>
+                    <ul class="card__list">
+                        <li>Investment memoranda</li>
+                        <li>Financial models and assumptions</li>
+                        <li>Legal documentation</li>
+                        <li>Property-level reporting</li>
+                        <li>Market research and benchmarking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section--alt" style="padding: var(--space-5); border-radius: var(--radius-lg); margin-top: var(--space-6);">
+                <h4 style="margin-bottom: var(--space-4);">Metrics Tracked</h4>
+                <div class="metrics">
+                    <div class="metric">
+                        <p class="metric__label">Net Operating Income</p>
+                        <p class="metric__value">NOI</p>
+                    </div>
+                    <div class="metric">
+                        <p class="metric__label">Internal Rate of Return</p>
+                        <p class="metric__value">IRR</p>
+                    </div>
+                    <div class="metric">
+                        <p class="metric__label">Capitalization Rate</p>
+                        <p class="metric__value">Cap Rate</p>
+                    </div>
+                    <div class="metric">
+                        <p class="metric__label">Loan-to-Value</p>
+                        <p class="metric__value">LTV</p>
+                    </div>
+                    <div class="metric">
+                        <p class="metric__label">Revenue per Room</p>
+                        <p class="metric__value">RevPAR</p>
+                    </div>
+                    <div class="metric">
+                        <p class="metric__label">Utilization Rate</p>
+                        <p class="metric__value">Occupancy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta section--warm">
+        <div class="container">
+            <p class="overline">Investor Engagement</p>
+            <h2 class="cta__title">Request a Private Investment Overview</h2>
+            <p class="cta__text">SENECA engages selectively with qualified investors and institutional partners who share our long-term perspective. If you are a family office, institutional allocator, or qualified private investor interested in Uzbekistan hospitality and real estate, we welcome a confidential conversation.</p>
+            <a href="mailto:invest@seneca.uz" class="btn btn--primary">Request Materials</a>
+            <p style="font-size: 13px; color: var(--seneca-soft); margin-top: var(--space-4);">We will respond within two business days to determine mutual fit.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div>
+                    <p class="footer__logo">SENECA</p>
+                    <p class="footer__tagline">Hospitality & Real Estate Investment | Uzbekistan</p>
+                </div>
+                <div class="footer__links">
+                    <a href="#thesis" class="footer__link">Market Thesis</a>
+                    <a href="#standard" class="footer__link">Our Standard</a>
+                    <a href="#portfolio" class="footer__link">Portfolio</a>
+                    <a href="#reporting" class="footer__link">Reporting</a>
+                    <a href="#contact" class="footer__link">Contact</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__disclaimer">This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any securities. Investment involves risk, including potential loss of principal. Past performance is not indicative of future results. SENECA does not solicit investment from the general public. All communications are confidential and subject to applicable regulations.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
